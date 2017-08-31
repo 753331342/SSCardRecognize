@@ -1,0 +1,22 @@
+{
+  "name": "SSCardRecognize",
+  "version": "0.1.0",
+  "summary": "A short description of SSCardRecognize.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/753331342@qq.com/SSCardRecognize",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "753331342@qq.com": "753331342@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/753331342@qq.com/SSCardRecognize.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SSCardRecognize/Classes/**/*"
+}

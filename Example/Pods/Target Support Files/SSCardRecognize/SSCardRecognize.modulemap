@@ -1,0 +1,6 @@
+framework module SSCardRecognize {
+  umbrella header "SSCardRecognize-umbrella.h"
+
+  export *
+  module * { export * }
+}
