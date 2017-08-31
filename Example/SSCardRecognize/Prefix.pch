@@ -1,0 +1,19 @@
+//
+//  Prefix.pch
+//  SSCardRecognize
+//
+//  Created by 张家铭 on 2017/8/31.
+//  Copyright © 2017年 753331342@qq.com. All rights reserved.
+//
+
+#ifndef Prefix_pch
+#define Prefix_pch
+
+#import "UIView+Frame.h"
+#import "RRGlobalMetrics.h"
+
+#import "SSImageTool.h"
+
+#import "SSConstants.h"
+
+#endif /* Prefix_pch */

@@ -1,9 +1,9 @@
 {
   "name": "SSCardRecognize",
   "version": "0.1.0",
-  "summary": "A short description of SSCardRecognize.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/753331342@qq.com/SSCardRecognize",
+  "summary": "识别银行卡",
+  "description": "识别中国身份证和银行卡",
+  "homepage": "https://github.com/753331342",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,17 @@
     "753331342@qq.com": "753331342@qq.com"
   },
   "source": {
-    "git": "https://github.com/753331342@qq.com/SSCardRecognize.git",
+    "git": "https://github.com/753331342/SSCardRecognize.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "SSCardRecognize/Classes/**/*"
+  "source_files": "SSCardRecognize/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "OpenCV/Dynamic": [
+      "~> 3.2.0"
+    ]
+  }
 }

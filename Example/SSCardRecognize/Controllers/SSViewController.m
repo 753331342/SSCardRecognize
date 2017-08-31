@@ -7,6 +7,7 @@
 //
 
 #import "SSViewController.h"
+#import "SSBankCardRecognizeController.h"
 
 @interface SSViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)sanBankCard:(UIButton *)sender {
+	[self.navigationController pushViewController:[[SSBankCardRecognizeController alloc] init] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
