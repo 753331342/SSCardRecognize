@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'SSCardRecognize_Example' do
+  pod 'SSCardRecognize', :path => '../'
+
+  target 'SSCardRecognize_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+  end
+end
