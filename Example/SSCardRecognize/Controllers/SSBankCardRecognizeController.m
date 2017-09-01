@@ -89,8 +89,8 @@
 	if ([self.outPutSetting isEqualToNumber:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]]) {
 		if (captureOutput == self.videoDataOutput) {
 			
-			
 			UIImage *image = [SSImageTool imageWithSampleBuffer:sampleBuffer];
+		
 	        // 停止拍照
 			if (self.videoDataOutput.sampleBufferDelegate) {
 				[self.videoDataOutput setSampleBufferDelegate:nil queue:self.queue];
@@ -148,7 +148,7 @@
 		CGFloat binkCardRatio = BANKCARDHEIGTHWIDTHRATIO;
 		CGFloat binkCardWidth = BANKCARDWIDTH * viewRatio320();
 		CGFloat binkCardHeight = binkCardWidth * binkCardRatio;
-		_scanView = [[SSBankCardScanningView alloc] initWithFrame:CGRectMake((viewWidth() - binkCardWidth) * 0.5, (viewHeight() - self.bottomWhiteView.frame.size.height - 64 - binkCardHeight) * 0.5 + 64, binkCardWidth, binkCardHeight)];
+		_scanView = [[SSBankCardScanningView alloc] initWithFrame:CGRectMake(15, 100, binkCardWidth, binkCardHeight)];
 	}
 	return _scanView;
 }

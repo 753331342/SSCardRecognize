@@ -177,10 +177,10 @@
 
 - (UIImageView *)imageView {
 	if (!_imageView) {
-		CGFloat binkCardRatio = 54 / 84.5; // 银行卡的宽高比
-		CGFloat binkCardWidth = 290.0 * viewRatio320();
+		CGFloat binkCardRatio = BANKCARDHEIGTHWIDTHRATIO; // 银行卡的宽高比
+		CGFloat binkCardWidth = BANKCARDWIDTH * viewRatio320();
 		CGFloat binkCardHeight = binkCardWidth * binkCardRatio;
-		_imageView = [[UIImageView alloc] initWithFrame:CGRectMake((viewWidth() - binkCardWidth) * 0.5, 64, binkCardWidth, binkCardHeight)];
+		_imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 64, binkCardWidth, binkCardHeight)];
 		_imageView.backgroundColor = [UIColor redColor];
 	}
 	return _imageView;

@@ -27,8 +27,6 @@
 	height = CVPixelBufferGetHeight(buffer);
 	bytesPerRow = CVPixelBufferGetBytesPerRow(buffer);
 	
-	NSLog(@"%zu----%zu---%zu", width,height,bytesPerRow);
-	
 	// 利用取得影像细部信息格式化 CGContextRef
 	CGColorSpaceRef colorSpace;
 	CGContextRef cgContext;
