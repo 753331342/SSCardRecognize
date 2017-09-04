@@ -8,6 +8,8 @@
 
 #import "SSScanResultController.h"
 
+#import "SSOpencvImageTool.h"
+
 @interface SSScanResultController ()
 
 @property (nonatomic, strong) UIImageView *imageView;
@@ -53,10 +55,17 @@
 	[self relyout];
 }
 
+#pragma mark - Event Respond
+
+- (void)clickReco {
+	self.imageView.image = [SSOpencvImageTool cardDetectWithImage:self.imageView.image];
+	[self relyout];
+}
+
 #pragma mark - Private Method
 
 - (void)relyout {
-	self.imageView.size = CGSizeMake(self.imageView.image.size.width / [UIScreen mainScreen].scale, self.imageView.image.size.height / [UIScreen mainScreen].scale);
+	self.imageView.size = CGSizeMake(self.imageView.image.size.width / 2, self.imageView.image.size.height / 2);
 }
 
 /** 返回 */
@@ -180,7 +189,7 @@
 		CGFloat binkCardRatio = BANKCARDHEIGTHWIDTHRATIO; // 银行卡的宽高比
 		CGFloat binkCardWidth = BANKCARDWIDTH * viewRatio320();
 		CGFloat binkCardHeight = binkCardWidth * binkCardRatio;
-		_imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 64, binkCardWidth, binkCardHeight)];
+		_imageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 64, binkCardWidth, binkCardHeight)];
 		_imageView.backgroundColor = [UIColor redColor];
 	}
 	return _imageView;

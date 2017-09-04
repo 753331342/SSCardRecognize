@@ -62,8 +62,8 @@
 // 裁剪银行卡号所在区域
 + (UIImage *)cropImageFromImage:(UIImage *)img {
 	
-	static CGFloat cardWidth = 400;
-	static CGFloat cardHeight = 400/1.58;
+	static CGFloat cardWidth = 420;
+	static CGFloat cardHeight = 420/1.58;
 	
 	CGFloat h = img.size.height * 500 / img.size.width;
 	UIGraphicsBeginImageContext(CGSizeMake(500, h));
@@ -73,9 +73,9 @@
 	CGFloat y = (scaleImg.size.height - cardHeight) / 2;
 	
 	CGImageRef sourceImageRef = [scaleImg CGImage];
-	CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, CGRectMake(50, y, cardWidth, cardHeight));
+	CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, CGRectMake(40, y, cardWidth, cardHeight));
 	
-	CGImageRef resultImgRef = CGImageCreateWithImageInRect(newImageRef, CGRectMake(0, 130, cardWidth, 50));
+	CGImageRef resultImgRef = CGImageCreateWithImageInRect(newImageRef, CGRectMake(0, 140, cardWidth, 60));
 	UIImage *mm = [UIImage imageWithCGImage:resultImgRef];
 	
 #warning 记得删掉下面的

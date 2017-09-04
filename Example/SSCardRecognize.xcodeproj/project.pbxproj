@@ -13,6 +13,7 @@
 		351391F61F57F18000E4FAA4 /* RRGlobalMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 351391F51F57F18000E4FAA4 /* RRGlobalMetrics.m */; };
 		351391F91F57F60C00E4FAA4 /* SSScanResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351391F81F57F60C00E4FAA4 /* SSScanResultController.m */; };
 		351391FD1F57F95F00E4FAA4 /* SSImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 351391FC1F57F95F00E4FAA4 /* SSImageTool.m */; };
+		351392011F593C8B00E4FAA4 /* SSOpencvImageTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 351392001F593C8B00E4FAA4 /* SSOpencvImageTool.mm */; };
 		354B16041F57E9A00030D8E7 /* SSBankCardRecognizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354B16011F57E9A00030D8E7 /* SSBankCardRecognizeController.m */; };
 		354B16051F57E9A00030D8E7 /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354B16031F57E9A00030D8E7 /* SSViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -56,6 +57,8 @@
 		351391FB1F57F95F00E4FAA4 /* SSImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSImageTool.h; sourceTree = "<group>"; };
 		351391FC1F57F95F00E4FAA4 /* SSImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSImageTool.m; sourceTree = "<group>"; };
 		351391FE1F5803D400E4FAA4 /* SSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSConstants.h; sourceTree = "<group>"; };
+		351391FF1F593C8B00E4FAA4 /* SSOpencvImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSOpencvImageTool.h; sourceTree = "<group>"; };
+		351392001F593C8B00E4FAA4 /* SSOpencvImageTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SSOpencvImageTool.mm; sourceTree = "<group>"; };
 		354B16001F57E9A00030D8E7 /* SSBankCardRecognizeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBankCardRecognizeController.h; sourceTree = "<group>"; };
 		354B16011F57E9A00030D8E7 /* SSBankCardRecognizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBankCardRecognizeController.m; sourceTree = "<group>"; };
 		354B16021F57E9A00030D8E7 /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				351391FB1F57F95F00E4FAA4 /* SSImageTool.h */,
 				351391FC1F57F95F00E4FAA4 /* SSImageTool.m */,
 				351391FE1F5803D400E4FAA4 /* SSConstants.h */,
+				351391FF1F593C8B00E4FAA4 /* SSOpencvImageTool.h */,
+				351392001F593C8B00E4FAA4 /* SSOpencvImageTool.mm */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				354B16041F57E9A00030D8E7 /* SSBankCardRecognizeController.m in Sources */,
 				354B16051F57E9A00030D8E7 /* SSViewController.m in Sources */,
 				351391EF1F57ED3300E4FAA4 /* UIView+Frame.m in Sources */,
+				351392011F593C8B00E4FAA4 /* SSOpencvImageTool.mm in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

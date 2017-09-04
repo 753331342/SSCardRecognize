@@ -18,7 +18,6 @@
 @property (nonatomic, strong) UIButton *rightNaviItem;
 @property (nonatomic, strong) SSBankCardScanningView *scanView;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) UIView *bottomWhiteView;
 @property (nonatomic, strong) UILabel *addBankCardLabel;
 @property (nonatomic, strong) UILabel *introduceLabel;
@@ -45,9 +44,7 @@
 	
 	[self.view.layer addSublayer:self.previewLayer];
 	
-	[self.view addSubview:self.coverView];
-	
-	[self.view addSubview:self.scanView];
+	[self.previewLayer addSublayer:self.scanView.layer];
 	
 	[self.view addSubview:self.bottomWhiteView];
 	[self.bottomWhiteView addSubview:self.addBankCardLabel];
@@ -90,6 +87,11 @@
 		if (captureOutput == self.videoDataOutput) {
 			
 			UIImage *image = [SSImageTool imageWithSampleBuffer:sampleBuffer];
+			
+			CGFloat ratio = 480.0 / viewWidth();
+			image = [SSImageTool imageWithImage:image inRect:CGRectMake(self.scanView.left * ratio, self.scanView.top * ratio, self.scanView.width * ratio, self.scanView.height * ratio)];
+			
+			image = [SSImageTool cropImageFromImage:image];
 		
 	        // 停止拍照
 			if (self.videoDataOutput.sampleBufferDelegate) {
@@ -148,7 +150,8 @@
 		CGFloat binkCardRatio = BANKCARDHEIGTHWIDTHRATIO;
 		CGFloat binkCardWidth = BANKCARDWIDTH * viewRatio320();
 		CGFloat binkCardHeight = binkCardWidth * binkCardRatio;
-		_scanView = [[SSBankCardScanningView alloc] initWithFrame:CGRectMake(15, 100, binkCardWidth, binkCardHeight)];
+		_scanView = [[SSBankCardScanningView alloc] initWithFrame:CGRectMake((_previewLayer.frame.size.width - binkCardWidth) * 0.5, (_previewLayer.frame.size.height - binkCardHeight) * 0.5, binkCardWidth, binkCardHeight)];
+		
 	}
 	return _scanView;
 }
@@ -156,24 +159,16 @@
 - (AVCaptureVideoPreviewLayer *)previewLayer {
 	if (!_previewLayer) {
 		_previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
-		_previewLayer.frame = CGRectMake(0, 64, viewWidth(), viewHeight() - 64);
-		_previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+		CGFloat imageWidthRatioToHeight = 480.0 / 640.0;
+		CGFloat height = viewWidth() / imageWidthRatioToHeight;
+		_previewLayer.frame = CGRectMake(0, 64, viewWidth(), height);
 	}
 	return _previewLayer;
 }
 
-- (UIView *)coverView {
-	if (!_coverView) {
-		_coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, viewWidth(), viewHeight() - 64 - self.bottomWhiteView.frame.size.height)];
-		_coverView.backgroundColor = [UIColor blackColor];
-		_coverView.alpha = 0.3;
-	}
-	return _coverView;
-}
-
 - (UIView *)bottomWhiteView {
 	if (!_bottomWhiteView) {
-		_bottomWhiteView = [[UIView alloc] initWithFrame:CGRectMake(0, viewHeight() - 177, viewWidth(), 177)];
+		_bottomWhiteView = [[UIView alloc] initWithFrame:CGRectMake(0, 64 + _previewLayer.frame.size.height, viewWidth(), viewHeight() - 64 - _previewLayer.frame.size.height)];
 		_bottomWhiteView.backgroundColor = [UIColor whiteColor];
 	}
 	return _bottomWhiteView;
